@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+}
+
+group = 'dev.alan'
+version = '0.0.1-SNAPSHOT'
+description = 'shopping-client'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.4.4'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.4.4'
+}
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			from(components.java)
+		}
+	}
+}
+
+test {
+	useJUnitPlatform()
+}

@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'maven-publish'
+	id "com.palantir.docker" version "0.26.0"
+}
+
+group = 'dev.alan'
+version = '0.0.1-SNAPSHOT'
+description = 'shopping-api'
+sourceCompatibility = '11'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.postgresql:postgresql'
+	implementation 'dev.alan:shopping-client:0.0.1-SNAPSHOT'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+docker {
+    name "${project.group}/${bootJar.baseName}"
+	files bootJar.outputs
+	copySpec.into("build/libs")
+	buildArgs(['JAR_FILE': "./build/libs/${bootJar.archivePath.name}"])
+}
+
+test {
+	useJUnitPlatform()
+}

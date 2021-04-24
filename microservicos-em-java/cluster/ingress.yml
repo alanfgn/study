@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: gateway-shop-ingress
+spec:
+  rules:
+    - host: shop.com
+      http:
+        paths:
+          - path: /users/
+            backend:
+              serviceName: user-api
+              servicePort: 8080
+          - path: /products/
+            backend:
+              serviceName: product-api
+              servicePort: 8081
+          - path: /shopping/
+            backend:
+              serviceName: shopping-api
+              servicePort: 8082

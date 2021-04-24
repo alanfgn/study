@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "48c881ec-6d8d-4940-a91f-3d33ab3a2715",
+		"name": "Mircoserviços Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_user}}/users/",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cpf\": \"01\",\n    \"nome\": \"Alpha\",\n    \"endereco\": \"Rua A\",\n    \"email\": \"alpha@email.com\",\n    \"telefone\": \"111111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_user}}/users/",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Serch User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_user}}/users/search?nome=Alp",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Alp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Cpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_user}}/users/cpf/01?key=0b2175f2-57dc-4708-9abb-43f93a426601",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users",
+						"cpf",
+						"01"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "0b2175f2-57dc-4708-9abb-43f93a426601"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_user}}/users/040404",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users",
+						"040404"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_product}}/products/",
+					"host": [
+						"{{base_url_product}}"
+					],
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_product}}/products/ab",
+					"host": [
+						"{{base_url_product}}"
+					],
+					"path": [
+						"products",
+						"ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n    \"nome\": \"Alfa\",\n    \"preco\": 100,\n    \"descricao\": \"aaa aaaaa aa\",\n    \"productIdentifier\": \"al\",\n    \"category\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_product}}/products/",
+					"host": [
+						"{{base_url_product}}"
+					],
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Alpha\",\n    \"preco\": 111,\n    \"descricao\": \"aaaaaaaaa\",\n    \"productIdentifier\": \"al\",\n    \"category\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_product}}/products/1",
+					"host": [
+						"{{base_url_product}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Shops",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "key",
+						"value": "37de0038-f1b3-4487-8fc8-167183cf2d22",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userIdentifier\": \"01\",\n    \"items\": [\n        {\n            \"productIdentifier\": \"al\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_shopping}}/shopping/",
+					"host": [
+						"{{base_url_shopping}}"
+					],
+					"path": [
+						"shopping",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get shops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_shopping}}/shopping/",
+					"host": [
+						"{{base_url_shopping}}"
+					],
+					"path": [
+						"shopping",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get shops by user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_shopping}}/shopping/user/alfa",
+					"host": [
+						"{{base_url_shopping}}"
+					],
+					"path": [
+						"shopping",
+						"user",
+						"alfa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_shopping}}/shopping/search/?dataInicio=01/01/2021&dataFim=01/09/2021&valorMinimo=20",
+					"host": [
+						"{{base_url_shopping}}"
+					],
+					"path": [
+						"shopping",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "01/01/2021"
+						},
+						{
+							"key": "dataFim",
+							"value": "01/09/2021"
+						},
+						{
+							"key": "valorMinimo",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_shopping}}/shopping/report?dataInicio=01/02/2021&dataFim=01/12/2021",
+					"host": [
+						"{{base_url_shopping}}"
+					],
+					"path": [
+						"shopping",
+						"report"
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "01/02/2021"
+						},
+						{
+							"key": "dataFim",
+							"value": "01/12/2021"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_user",
+			"value": "shop.com"
+		},
+		{
+			"key": "base_url_product",
+			"value": "shop.com"
+		},
+		{
+			"key": "base_url_shopping",
+			"value": "shop.com"
+		}
+	]
+}
