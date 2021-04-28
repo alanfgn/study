@@ -1,0 +1,1 @@
+class Foto(val id: String, val owner: String)
