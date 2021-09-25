@@ -1,5 +1,12 @@
 object Hello {
     def main(args: Array[String]) = {
-        println("Hello Scala")
+        val x: Option[String] = null
+
+        val data = x match {
+            case Some(x) => "a"
+            case _ => "b"
+        }
+
+        println(data)
     }
 }
